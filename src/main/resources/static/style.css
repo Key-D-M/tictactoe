@@ -1,0 +1,80 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+  margin: 0;
+}
+
+h1 {
+  color: #333;
+}
+
+#game-status {
+  margin-bottom: 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #555;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px); /* 3 kolom masing-masing 100px */
+  grid-template-rows: repeat(3, 100px); /* 3 baris masing-masing 100px */
+  gap: 5px;
+  border: 2px solid #333;
+  background-color: #333; /* Warna garis antar sel */
+  width: 315px; /* (100*3) + (5*2) = 310 + 5 + 5 = 315 */
+  height: 315px;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  color: #333; /* Warna default teks */
+}
+
+.cell:hover {
+  background-color: #e0e0e0;
+}
+
+.cell.X {
+  color: #e74c3c; /* Merah untuk X */
+}
+
+.cell.O {
+  color: #3498db; /* Biru untuk O */
+}
+
+.cell.X:hover,
+.cell.O:hover {
+  background-color: #fff; /* Jangan ubah warna saat hover jika sudah terisi */
+  cursor: default; /* Jangan tampilkan kursor pointer jika sudah terisi */
+}
+
+#new-game-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1.1em;
+  background-color: #28a745; /* Hijau */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#new-game-btn:hover {
+  background-color: #218838;
+}
